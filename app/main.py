@@ -29,16 +29,10 @@ def read_root():
     return {hulu.keys()[0]}
 
 
-# @app.get("/items/{item_id}")
-# def read_item(item_id: int, q: str = None):
-#     return {"item_id": item_id, "q": q}
-
-
 @app.get("/get_max_duration/")
 # Película con mayor duración con filtros opcionales de AÑO, PLATAFORMA Y TIPO DE DURACIÓN
 # todo : el duration_type es irrelevante
 async def get_max_duration(year: int = None, platform: str = None, duration_type: str = None):
-    platform_arg = platform.lower()
     df_f = df[df["type"] == "movie"]
     df_f["duration_int"] = df_f["duration_int"].replace("g", 0)
 
@@ -52,6 +46,7 @@ async def get_max_duration(year: int = None, platform: str = None, duration_type
     if year is not None:
         df_f = df_f.loc[df_f['release_year'] == year]
     if platform is not None:
+        platform_arg = platform.lower()
         if platform_arg in platforms.keys():
             df_f = df_f.loc[df_f['id'].str[0] == platform_arg[0]]
         else:
