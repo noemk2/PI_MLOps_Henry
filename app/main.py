@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 import pandas as pd
 
-hulu = pd.read_csv("dataset/hulu.csv")
-amazon = pd.read_csv("dataset/amazon.csv")
-disney = pd.read_csv("dataset/disney.csv")
-netflix = pd.read_csv("dataset/netflix.csv")
+hulu = pd.read_csv("hulu.csv")
+amazon = pd.read_csv("amazon.csv")
+disney = pd.read_csv("disney.csv")
+netflix = pd.read_csv("netflix.csv")
 
 platforms = {"hulu": hulu, "amazon": amazon,
              "disney": disney, "netflix": netflix}
