@@ -1,23 +1,23 @@
 from fastapi import FastAPI
 import pandas as pd
 
-hulu = pd.read_csv("./dataset/hulu.csv")
-amazon = pd.read_csv("./dataset/amazon.csv")
-disney = pd.read_csv("./dataset/disney.csv")
-netflix = pd.read_csv("./dataset/netflix.csv")
+hulu = pd.read_csv("dataset/hulu.csv")
+amazon = pd.read_csv("dataset/amazon.csv")
+disney = pd.read_csv("dataset/disney.csv")
+netflix = pd.read_csv("dataset/netflix.csv")
 
 platforms = {"hulu": hulu, "amazon": amazon,
              "disney": disney, "netflix": netflix}
 
 # ratings
-uno = pd.read_csv("./dataset/ratings/1.csv")
-dos = pd.read_csv("./dataset/ratings/2.csv")
-tres = pd.read_csv("./dataset/ratings/3.csv")
-cuatro = pd.read_csv("./dataset/ratings/4.csv")
-cinco = pd.read_csv("./dataset/ratings/5.csv")
-seis = pd.read_csv("./dataset/ratings/6.csv")
-siete = pd.read_csv("./dataset/ratings/7.csv")
-ocho = pd.read_csv("./dataset/ratings/8.csv")
+uno = pd.read_csv("dataset/ratings/1.csv")
+dos = pd.read_csv("dataset/ratings/2.csv")
+tres = pd.read_csv("dataset/ratings/3.csv")
+cuatro = pd.read_csv("dataset/ratings/4.csv")
+cinco = pd.read_csv("dataset/ratings/5.csv")
+seis = pd.read_csv(".dataset/ratings/6.csv")
+siete = pd.read_csv("dataset/ratings/7.csv")
+ocho = pd.read_csv("dataset/ratings/8.csv")
 
 
 app = FastAPI()
